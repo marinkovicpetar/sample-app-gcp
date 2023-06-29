@@ -46,10 +46,9 @@ jobs:
       with:
           cluster_name: katana-sample
           location: us-central-1
-          credentials: ${{ secrets.GCP_CREDENTIALS }}
 
    # Deploy the Docker image to the GKE cluster
-    - name: Deploy
+    - name: Deploy GKE
       run: |-
         kubectl rollout status deployment/sample-katana-app
         kubectl get services -o wide      
