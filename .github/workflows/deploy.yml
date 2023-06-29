@@ -50,5 +50,5 @@ jobs:
    # Deploy the Docker image to the GKE cluster
     - name: Deploy GKE
       run: |-
-        kubectl rollout restart deployment deployment/sample-katana-app
+        kubectl rollout restart deployment/sample-katana-app
         kubectl get services -o wide    
