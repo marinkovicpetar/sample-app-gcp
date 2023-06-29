@@ -37,5 +37,5 @@ jobs:
         gcloud run deploy katana-sample-app --image gcr.io/pma-learn/katana-sample-app \
         --platform managed \
         --allow-unauthenticated \
-        --memory 512M
+        --memory 512M \
         --region us-central1
