@@ -38,3 +38,4 @@ jobs:
         --platform managed \
         --allow-unauthenticated \
         --memory 512M
+        --region us-central1
