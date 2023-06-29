@@ -11,12 +11,14 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
 
-    # Setup gcloud CLI
-    - uses: GoogleCloudPlatform/github-actions/setup-gcloud@master
+    # Authentication
+    - name: Authenticate to gcloud
+      uses: 'google-github-actions/auth@v1'
       with:
-        service_account_email: github-actions-service-account@pma-learn.iam.gserviceaccount.com
-        service_account_key: ${{ secrets.GCP_CREDENTIALS }}
-        export_default_credentials: true
+        credentials_json: ${{ secrets.GCP_CREDENTIALS }}
+
+    - name: Set up Cloud SDK
+      uses: 'google-github-actions/setup-gcloud@v1'        
     
     # Configure Docker with Credentials
     - name: Configure Docker
